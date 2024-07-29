@@ -1,6 +1,3 @@
-// MIT License
-// Copyright (c) 2020 Luis Espino
-
 function reflex_agent(location, state){
    	if (state=="DIRTY") return "CLEAN";
    	else if (location=="A") return "RIGHT";
@@ -17,7 +14,11 @@ function test(states){
          	else if (location == "B") states[2] = "CLEAN";
       	}
       	else if (action_result == "RIGHT") states[0] = "B";
-      	else if (action_result == "LEFT") states[0] = "A";		
+      	else if (action_result == "LEFT") states[0] = "A";	
+		
+	if (states[1] == "CLEAN"  && Math.random() < 0.5) states[1] = "DIRTY";
+	if (states[2] == "CLEAN"  && Math.random() < 0.5) states[2] = "DIRTY";
+
 	setTimeout(function(){ test(states); }, 2000);
 }
 
