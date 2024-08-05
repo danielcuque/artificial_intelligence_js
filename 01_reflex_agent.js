@@ -59,8 +59,7 @@ function test(states) {
     const action_result = reflex_agent(location, state);
 
     document.getElementById("log").innerHTML += `
-    <br>State: A: ${leftState} | B: ${rightState}
-    <br>Location: ${location} | Action: ${action_result}<br>`;
+    <br>State: A: ${leftState} | B: ${rightState} Location: ${location} | Action: ${action_result}<br>`;
 
     if (action_result === CLEAN_ACTION) {
         if (location === LEFT_POSITION) states[1] = CLEAN_STATE;
@@ -74,7 +73,7 @@ function test(states) {
 
     else if (action_result === RIGHT_ACTION) states[0] = RIGHT_POSITION;
     else if (action_result === LEFT_ACTION) states[0] = LEFT_POSITION;
-    setTimeout(function () { test(states); }, 200);
+    setTimeout(function () { test(states); }, 600);
 }
 
 const states = [LEFT_POSITION, DIRTY_STATE, DIRTY_STATE];
